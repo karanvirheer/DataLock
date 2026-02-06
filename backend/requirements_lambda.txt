@@ -1,0 +1,12 @@
+# Core scientific stack
+numpy
+pandas
+scipy
+
+# DuckDB (for inference.duckdb)
+duckdb
+
+# XGBoost CPU-only build
+xgboost-cpu
+
+

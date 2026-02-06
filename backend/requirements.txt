@@ -1,0 +1,17 @@
+duckdb
+boto3
+requests
+numpy
+pandas
+scikit-learn
+xgboost
+jupyter
+duckdb
+pandas
+numpy
+scikit-learn
+xgboost
+boto3
+jupyter
+papermill
+requests

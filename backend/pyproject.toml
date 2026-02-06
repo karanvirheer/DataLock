@@ -1,0 +1,32 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deadlock-backend"
+version = "0.1.0"
+description = "Deadlock hero build training + inference backend"
+requires-python = ">=3.11"
+dependencies = [
+    "duckdb",
+    "boto3",
+    "pandas",
+    "numpy",
+    "xgboost",
+    "scikit-learn",
+    "requests",
+    "jupyter",
+    # add anything else you use in the notebook / scripts
+]
+
+[project.optional-dependencies]
+dev = [
+    "ipykernel",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
