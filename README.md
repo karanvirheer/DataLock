@@ -43,10 +43,7 @@ The AWS HTTP API triggers a Python Lambda handler which:
 **4) Model assets are loaded from private S3 and cached for speed**  
 The inference bundle (models + feature ordering + item/hero metadata) lives in a private S3 bucket. On cold start, Lambda downloads the bundle once, then caches it in `/tmp` and process-level globals so subsequent invocations reuse the assets without repeated S3 fetches. This reduces latency and cost while keeping the artifacts private.
 
-**5) Optional caching for repeated matchups (DynamoDB)**  
-For identical contexts (same hero, allies, enemies, phase), DynamoDB can cache the response. This avoids recomputing rankings for common matchups and makes repeated requests consistently fast.
-
-**6) Results are rendered as a build shortlist (Next.js UI)**  
+**5) Results are rendered as a build shortlist (Next.js UI)**  
 The frontend renders the ranked recommendations as item cards using the returned metadata (names and shop images). The goal is to make the output feel like a usable build shortlist rather than a raw model score dump.
 
 ## Architecture Diagram
